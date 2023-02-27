@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css">
+        <title>Frontend Mentor | Article Preview Component</title>
+    </head>
+    <body>
+        <main>
+            <div class="page-container">
+                <div class="main-container">
+                    <div class="image-container">
+                        <img src="./images/drawers.jpg" alt="chest of drawers with decorative items" class="drawers">
+                    </div>
+                    <div class="article-info">
+                        <div class="main-text">
+                            <h1 class="headline">Shift the overall look and feel by adding these wonderful touches to furniture in your home</h1>
+                            <h2 class="subheadline">Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I've got some tips to help you make any room feel complete.</h2>
+                        </div>
+                        <div class="info-and-share">
+                            <div class="info">
+                                <img src="./images/avatar-michelle.jpg" alt="a photograph of the author's face" class="avatar">
+                                <div class="author-date">
+                                    <p class="author-name">Michelle Appleton</p>
+                                    <p class="publish-date">28 Jun 2020</p>
+                                </div>
+                            </div>
+                            <div class="share-tooltip" id="tooltip"> <!--this is the container that displays the social icons-->
+                                <div class="main-box">
+                                    <p class="share-text">SHARE</p>
+                                    <img src="./images/icon-facebook.svg" alt="facebook icon" class="sm-icon">
+                                    <img src="./images/icon-twitter.svg" alt="twitter icon" class="sm-icon">
+                                    <img src="./images/icon-pinterest.svg" alt="pinterest icon" class="sm-icon">
+                                </div>
+                            </div>
+                            <button type="button" class="share" id="share-button" onclick="displayShareIcons()" onmouseover="highlightButton()" onmouseout="setRegularState()">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="share-icon" id="share-icon" width="15" height="13"><path id="arrow" fill="#6E8098" d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="share-icon" id="share-icon-white" width="15" height="13"><path id="arrow-white" fill="#FFFFFF" d="M15 6.495L8.766.014V3.88H7.441C3.33 3.88 0 7.039 0 10.936v2.049l.589-.612C2.59 10.294 5.422 9.11 8.39 9.11h.375v3.867L15 6.495z"/></svg>
+                            </button>      
+                        </div>  
+                    </div>
+                </div>
+        </div>
+        </main>
+        <script>
+            function highlightButton() {
+                document.getElementById("share-icon").style.display = "none";
+                document.getElementById("share-icon-white").style.display = "block";
+                document.getElementById("share-button").style.backgroundColor = "hsl(212, 23%, 69%)";
+            }
+
+            function setRegularState() {
+                document.getElementById("share-icon").style.display = "initial";
+                document.getElementById("share-icon-white").style.display = "none";
+                document.getElementById("share-button").style.backgroundColor = "hsl(210, 46%, 95%)";
+            }
+            
+            function displayShareIcons() {
+                document.getElementById("tooltip").style.display = "flex"; 
+            }
+        </script>
+    </body>
+</html>
